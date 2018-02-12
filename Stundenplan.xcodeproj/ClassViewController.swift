@@ -127,8 +127,8 @@ class ClassViewController: UITableViewController, UIPickerViewDelegate, UIPicker
         pickerView.dataSource = self
         pickerView.delegate = self
         
-        let rowweek = singleClass == nil ? 3 : singleClass!.time[0]
-        let rowtime = singleClass == nil ? 2 : singleClass!.time[1]
+        let rowweek = singleClass == nil ? Class.weekDay : singleClass!.time[0]
+        let rowtime = singleClass == nil ? 0 : singleClass!.time[1]
         
         pickerView.selectRow(rowweek,inComponent:0,animated:true)
         pickerView.selectRow(rowtime,inComponent:1,animated:true)

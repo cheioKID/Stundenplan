@@ -15,6 +15,9 @@ class Class: NSObject, NSCoding{
     var week: [Int]
     var note: String?
     
+    //for init time picker
+    static var weekDay = 0
+    
     
     init(name: String, location: String, teacher: String, time: [Int], week: [Int], note: String?) {
         guard !(name.isEmpty || location.isEmpty || teacher.isEmpty || time.isEmpty || week.isEmpty) else {
@@ -78,5 +81,6 @@ class Class: NSObject, NSCoding{
     static func saveClasses(_ classes: [Class]) {
         NSKeyedArchiver.archiveRootObject(classes, toFile: Class.ArchiveURL.path)
     }
+
 
 }

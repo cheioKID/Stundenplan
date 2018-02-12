@@ -37,12 +37,14 @@ class ClassTableViewController: UITableViewController {
         currentWeekDay = getRealWeekDay() - 1 //init as today in reality
         weekDaySegmentControl.selectedSegmentIndex = currentWeekDay
         updateClassesToday()
+        Class.weekDay = currentWeekDay
     }
     
     @IBAction func weekDayChanged(_ sender: UISegmentedControl) {
         currentWeekDay = weekDaySegmentControl.selectedSegmentIndex
         updateClassesToday()
         tableView.reloadData()
+        Class.weekDay = currentWeekDay
     }
     
     func updateClassesToday() {
