@@ -17,6 +17,7 @@ class Class: NSObject, NSCoding{
     
     //for init time picker
     static var weekDay = 0
+    static var firstWeek = 9  //now 7st  term begin 9st //9st: 17st 17st: 25st 
     
     
     init(name: String, location: String, teacher: String, time: [Int], week: [Int], note: String?) {

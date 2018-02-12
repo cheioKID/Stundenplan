@@ -14,14 +14,12 @@ class ClassTableViewController: UITableViewController {
     var currentWeekDay = -1
     var currentWeek = -1
     
-    func getCurrentWeek() -> Int {
-        return -1
-    }
     
     func getRealWeekDay() -> Int {
         let calendar: Calendar = Calendar(identifier: .gregorian)
         var dateComponents: DateComponents = DateComponents()
-        dateComponents = calendar.dateComponents([.weekday], from: Date())
+        dateComponents = calendar.dateComponents([.weekday,.weekOfYear], from: Date())
+        currentWeek = 9//dateComponents.weekOfYear! // current week settes already
         let weekday = dateComponents.weekday!
         if weekday == 1 {
             return 7
@@ -49,14 +47,13 @@ class ClassTableViewController: UITableViewController {
     
     func updateClassesToday() {
         classesToday.removeAll()
+        let rightWeek = currentWeek - Class.firstWeek
         for singleClass in classes {
-            if singleClass.time[0] == currentWeekDay {
-                classesToday.append(singleClass)
+            if singleClass.week.contains(rightWeek) {
+                if singleClass.time[0] == currentWeekDay {
+                    classesToday.append(singleClass)
                 
-                print(singleClass.name + "在周")
-                print(singleClass.time[0] + 1)
-                print(classesToday)
-                print("////////////////")
+                }
             }
         }
         
@@ -99,6 +96,10 @@ class ClassTableViewController: UITableViewController {
         return true
     }
     
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        return .delete
+    }
+    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let classToDelete = classesToday[indexPath.row]
@@ -109,6 +110,32 @@ class ClassTableViewController: UITableViewController {
             Class.saveClasses(classes)
         }
     }
+    
+    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+        let classToMove = classesToday.remove(at: fromIndexPath.row)
+        guard let removePosition = classes.index(of: classToMove) else { return }
+        classes.remove(at: removePosition)
+        
+        let insertPositionClass = classesToday[to.row]
+        guard let insertPosition = classes.index(of: insertPositionClass) else {return}
+        classes.insert(classToMove, at: insertPosition)
+        
+        classesToday.insert(classToMove, at: to.row)
+        tableView.reloadData()
+        Class.saveClasses(classes)
+        
+        
+        
+        
+    
+        /*
+        let movedEmoji = emojis.remove(at: fromIndexPath.row)
+        emojis.insert(movedEmoji, at: to.row)
+        saveToFile(emojis: emojis)
+        tableView.reloadData()
+        */
+    }
+    
     
     @IBAction func unwindToClassList(segue: UIStoryboardSegue) {
         guard segue.identifier == "saveUnwind" else { return }
