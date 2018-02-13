@@ -13,13 +13,19 @@ class ClassTableViewController: UITableViewController {
 
     var currentWeekDay = -1
     var currentWeek = -1
+    var firstWeek = -1
+    
+    func initFirstWeekDefault() {
+        let defaults = UserDefaults.standard
+        firstWeek = defaults.integer(forKey: "firstWeek")
+    }
     
     
     func getRealWeekDay() -> Int {
         let calendar: Calendar = Calendar(identifier: .gregorian)
         var dateComponents: DateComponents = DateComponents()
         dateComponents = calendar.dateComponents([.weekday,.weekOfYear], from: Date())
-        currentWeek = 9//dateComponents.weekOfYear! // current week settes already
+        currentWeek = 9//dateComponents.weekOfYear! // current week setted already
         let weekday = dateComponents.weekday!
         if weekday == 1 {
             return 7
@@ -47,7 +53,7 @@ class ClassTableViewController: UITableViewController {
     
     func updateClassesToday() {
         classesToday.removeAll()
-        let rightWeek = currentWeek - Class.firstWeek
+        let rightWeek = currentWeek - firstWeek
         for singleClass in classes {
             if singleClass.week.contains(rightWeek) {
                 if singleClass.time[0] == currentWeekDay {
@@ -71,6 +77,8 @@ class ClassTableViewController: UITableViewController {
         navigationItem.leftBarButtonItem = editButtonItem
         
         initWeekDaySegmentControl()
+        
+        initFirstWeekDefault()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -17,6 +17,7 @@
 		16F69EED202EFB3200A8D491 /* ClassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F69EE2202EFB3200A8D491 /* ClassCell.swift */; };
 		16F69EEE202EFB3200A8D491 /* ClassTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F69EE3202EFB3200A8D491 /* ClassTableViewCell.swift */; };
 		16F69EEF202EFB3200A8D491 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F69EE4202EFB3200A8D491 /* AppDelegate.swift */; };
+		16F69EF22031E74A00A8D491 /* PerferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F69EF12031E74A00A8D491 /* PerferencesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		16F69EE2202EFB3200A8D491 /* ClassCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassCell.swift; sourceTree = "<group>"; };
 		16F69EE3202EFB3200A8D491 /* ClassTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassTableViewCell.swift; sourceTree = "<group>"; };
 		16F69EE4202EFB3200A8D491 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		16F69EF12031E74A00A8D491 /* PerferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PerferencesViewController.swift; path = ../PerferencesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,13 +68,14 @@
 				16F69EDB202EFB3200A8D491 /* Main.storyboard */,
 				16F69EDC202EFB3200A8D491 /* LaunchScreen.storyboard */,
 				16F69EDD202EFB3200A8D491 /* Assets.xcassets */,
-				16F69EDE202EFB3200A8D491 /* Info.plist */,
-				16F69EDF202EFB3200A8D491 /* ClassTableViewController.swift */,
-				16F69EE0202EFB3200A8D491 /* ClassViewController.swift */,
+				16F69EE4202EFB3200A8D491 /* AppDelegate.swift */,
 				16F69EE1202EFB3200A8D491 /* Class.swift */,
 				16F69EE2202EFB3200A8D491 /* ClassCell.swift */,
 				16F69EE3202EFB3200A8D491 /* ClassTableViewCell.swift */,
-				16F69EE4202EFB3200A8D491 /* AppDelegate.swift */,
+				16F69EDE202EFB3200A8D491 /* Info.plist */,
+				16F69EDF202EFB3200A8D491 /* ClassTableViewController.swift */,
+				16F69EE0202EFB3200A8D491 /* ClassViewController.swift */,
+				16F69EF12031E74A00A8D491 /* PerferencesViewController.swift */,
 			);
 			name = Stundenplan;
 			path = Stundenplan.xcodeproj;
@@ -153,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16F69EEF202EFB3200A8D491 /* AppDelegate.swift in Sources */,
+				16F69EF22031E74A00A8D491 /* PerferencesViewController.swift in Sources */,
 				16F69EED202EFB3200A8D491 /* ClassCell.swift in Sources */,
 				16F69EEC202EFB3200A8D491 /* Class.swift in Sources */,
 				16F69EEA202EFB3200A8D491 /* ClassTableViewController.swift in Sources */,

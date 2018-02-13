@@ -120,9 +120,14 @@ class ClassViewController: UITableViewController, UIPickerViewDelegate, UIPicker
 
     }
   
-////////////////////////////////////////////////////////////////////
-//time picker
-////////////////////////////////////////////////////////////////////
+    //            _/_/_/  _/    _/  _/_/_/_/  _/_/_/     _/_/
+    //         _/        _/    _/  _/          _/     _/    _/
+    //        _/        _/_/_/_/  _/_/_/      _/     _/    _/
+    //       _/        _/    _/  _/          _/     _/    _/
+    //        _/_/_/  _/    _/  _/_/_/_/  _/_/_/     _/_/ 
+    
+    //time picker
+
     func initPickerView(for pickerView: UIPickerView) {
         pickerView.dataSource = self
         pickerView.delegate = self
@@ -189,9 +194,14 @@ class ClassViewController: UITableViewController, UIPickerViewDelegate, UIPicker
     }
 
     
-////////////////////////////////////////////////////////////////////
-//week button select
-////////////////////////////////////////////////////////////////////
+    //            _/_/_/  _/    _/  _/_/_/_/  _/_/_/     _/_/
+    //         _/        _/    _/  _/          _/     _/    _/
+    //        _/        _/_/_/_/  _/_/_/      _/     _/    _/
+    //       _/        _/    _/  _/          _/     _/    _/
+    //        _/_/_/  _/    _/  _/_/_/_/  _/_/_/     _/_/
+    
+    //week button select
+
     var isTheWeekSeleted:[Bool] = [false]
     
     func initWeekButtonNonSelected() {
@@ -254,9 +264,13 @@ class ClassViewController: UITableViewController, UIPickerViewDelegate, UIPicker
     
     
     
-////////////////////////////////////////////////////////////////////
-//view init
-////////////////////////////////////////////////////////////////////
+    //            _/_/_/  _/    _/  _/_/_/_/  _/_/_/     _/_/
+    //         _/        _/    _/  _/          _/     _/    _/
+    //        _/        _/_/_/_/  _/_/_/      _/     _/    _/
+    //       _/        _/    _/  _/          _/     _/    _/
+    //        _/_/_/  _/    _/  _/_/_/_/  _/_/_/     _/_/
+
+    //view init
     
     override func viewDidLoad() {
         super.viewDidLoad()
